@@ -11,4 +11,4 @@ Repositorio oficial que consolida la documentación técnica y el desarrollo del
 * **Entrega N.° 1:** Marco Estratégico, Visión, Misión y Objetivos.
 * **Entrega N.° 2:** Estructura Formal, Organigrama y Puestos de Trabajo.
 * **Entrega N.° 3:** Diseño de Datos y Diccionario de Datos Inicial.
-* **Entrega N.° 4:** Modelado de Procesos (BPMN), Control de Versiones (Git & GitHub), Backlog Ágil y Métricas de Control (KPIs).<img width="885" height="702" alt="image" src="https://github.com/user-attachments/assets/0bcf6161-b9ad-4884-b636-62c771e64a9b" />
+* **Entrega N.° 4:** Modelado de Procesos (BPMN), Control de Versiones (Git & GitHub), Backlog Ágil y Métricas de Control (KPIs).
