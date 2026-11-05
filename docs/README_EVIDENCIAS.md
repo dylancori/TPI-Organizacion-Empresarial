@@ -11,7 +11,7 @@ Autor: Dylan Corigliano Ramos. Entrega académica **individual**.
 | HU-02 | https://github.com/dylancori/TPI-Organizacion-Empresarial/issues/2 | Issue creado; funcionalidad pendiente |
 | HU-03 | https://github.com/dylancori/TPI-Organizacion-Empresarial/issues/3 | Issue creado; funcionalidad pendiente |
 | GitHub Projects | Enlace por incorporar cuando exista | Pendiente |
-| PR | Enlace por incorporar después de crearlo | Pendiente |
+| PR | https://github.com/dylancori/TPI-Organizacion-Empresarial/pull/4 | Abierto como borrador; revisión externa pendiente |
 | Revisión de pares | Revisor externo | Pendiente |
 
 **Importante:** crear Issues o documentación no demuestra programación ni pruebas de una aplicación. No atribuir revisión de pares al propio autor. Solicitar a la docente una alternativa si nadie está disponible.
