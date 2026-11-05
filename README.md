@@ -21,7 +21,7 @@ TechLogix Solutions es una empresa **ficticia** de soluciones informáticas. La 
 - [Metas e indicadores de control](docs/control/kpis.md)
 - [Acciones necesarias para cerrar la entrega](github/PROXIMOS_PASOS.md)
 
-**Importante:** el archivo BPMN contiene el modelo semántico. La diagramación gráfica final con pools, lanes y conectores debe validarse en un editor BPMN antes de la entrega; un esquema de texto no reemplaza esa verificación.
+**Importante:** el archivo BPMN incorpora un modelo semántico y coordenadas gráficas BPMN DI (pools, lanes y conectores). Debe abrirse y revisarse personalmente en un editor BPMN antes de la entrega; un esquema de texto no reemplaza esa verificación.
 
 ## Backlog de historias de usuario
 - [HU-01 — Registro y autoatención](https://github.com/dylancori/TPI-Organizacion-Empresarial/issues/1) · [Especificación](backlog/HU-01.md) · **Por hacer**
@@ -30,7 +30,7 @@ TechLogix Solutions es una empresa **ficticia** de soluciones informáticas. La 
 
 **Tablero interactivo GitHub Projects:** pendiente de crear y enlazar. Los Issues existen, pero no constituyen por sí solos un tablero.
 
-**Pull Request con revisión de pares:** la rama de corrección fue creada y se presentará un PR real; la revisión de otra persona continúa **pendiente** y no se reemplaza por una autoaprobación.
+**Pull Request:** [PR #4 — reescritura final](https://github.com/dylancori/TPI-Organizacion-Empresarial/pull/4), abierto como borrador y **sin revisión de pares**. La revisión por otra persona continúa pendiente.
 
 ## Declaración de uso de IA
 Se utilizó ChatGPT como herramienta de asistencia para revisar consignas y observaciones docentes, recuperar y comparar entregas previas, redactar borradores, proponer un flujo BPMN que integre incidentes con QA/CI-CD, estructurar historias de usuario y criterios de aceptación, preparar indicadores y operar GitHub con autorización. Se solicitaron aclaraciones para **no atribuir hechos inexistentes** a entregas anteriores y diferenciar propuestas de resultados medidos.
