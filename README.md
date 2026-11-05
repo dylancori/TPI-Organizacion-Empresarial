@@ -31,7 +31,7 @@ TechLogix Solutions es una empresa **ficticia** de soluciones informáticas. La 
 - [HU-02 — Escalamiento N1/N2](https://github.com/dylancori/TPI-Organizacion-Empresarial/issues/2) · [Especificación](backlog/HU-02.md) · **Por hacer**
 - [HU-03 — Tablero analítico](https://github.com/dylancori/TPI-Organizacion-Empresarial/issues/3) · [Especificación](backlog/HU-03.md) · **Por hacer**
 
-**Tablero GitHub Projects:** [TPI TechLogix - Backlog](https://github.com/users/dylancori/projects/1). Enlace facilitado por el autor tras crear el Project #1. **Pendiente de comprobar:** visibilidad pública, importación efectiva de las HU #1–#3 y columnas de estados.
+**Tablero GitHub Projects:** [TPI TechLogix - Backlog](https://github.com/users/dylancori/projects/1). La captura proporcionada por el autor muestra el ícono de globo (visibilidad pública), tres tarjetas HU #1–#3 vinculadas y estados Todo (3), In Progress (0), Done (0).
 
 **Pull Request:** [PR #4 — reescritura final](https://github.com/dylancori/TPI-Organizacion-Empresarial/pull/4), abierto como borrador y **sin revisión de pares**. La revisión por otra persona continúa pendiente.
 
