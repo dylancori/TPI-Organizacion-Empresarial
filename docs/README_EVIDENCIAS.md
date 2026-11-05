@@ -10,7 +10,7 @@ Autor: Dylan Corigliano Ramos. Entrega académica **individual**.
 | HU-01 | https://github.com/dylancori/TPI-Organizacion-Empresarial/issues/1 | Issue creado; funcionalidad pendiente |
 | HU-02 | https://github.com/dylancori/TPI-Organizacion-Empresarial/issues/2 | Issue creado; funcionalidad pendiente |
 | HU-03 | https://github.com/dylancori/TPI-Organizacion-Empresarial/issues/3 | Issue creado; funcionalidad pendiente |
-| GitHub Projects | https://github.com/users/dylancori/projects/1 | Enlace aportado por el autor; contenido y visibilidad aún no verificables desde la conexión |
+| GitHub Projects | https://github.com/users/dylancori/projects/1 | Captura del 05/11/2026 muestra HU-01, HU-02 y HU-03 en Todo (3), In Progress (0), Done (0); candado indica Private. Cambio a Public pendiente |
 | PR | https://github.com/dylancori/TPI-Organizacion-Empresarial/pull/4 | Abierto como borrador; revisión externa pendiente |
 | Revisión de pares | Revisor externo | Pendiente |
 
