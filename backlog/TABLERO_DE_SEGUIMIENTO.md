@@ -1,6 +1,6 @@
 # Seguimiento del backlog — vista provisional en Markdown
 
-**Tablero externo:** [TPI TechLogix - Backlog](https://github.com/users/dylancori/projects/1), URL facilitada por el autor. Esta tabla Markdown es una vista auxiliar, **no sustituye el Project**. Su visibilidad, ítems y estados todavía requieren una comprobación manual.
+**Tablero externo:** [TPI TechLogix - Backlog](https://github.com/users/dylancori/projects/1), URL facilitada por el autor. Esta tabla Markdown es una vista auxiliar, **no sustituye el Project**. La captura actualizada del autor muestra globo de visibilidad pública, los tres Issues en Todo, y columnas In Progress y Done vacías.
 
 | Por hacer | En progreso | Listo |
 |---|---|---|
