@@ -20,6 +20,9 @@ TechLogix Solutions es una empresa **ficticia** de soluciones informáticas. La 
 - [Evidencias verificables y pendientes](docs/README_EVIDENCIAS.md)
 - [Metas e indicadores de control](docs/control/kpis.md)
 - [Acciones necesarias para cerrar la entrega](github/PROXIMOS_PASOS.md)
+- [Vista provisional de seguimiento de las HU](backlog/TABLERO_DE_SEGUIMIENTO.md) — **no reemplaza GitHub Projects**
+- [Control de consistencia de entregas](docs/CONTROL_DE_CONSISTENCIA.md)
+- [Plan de verificaciones y riesgos](docs/PRUEBAS_Y_CRITERIOS.md)
 
 **Importante:** el archivo BPMN incorpora un modelo semántico y coordenadas gráficas BPMN DI (pools, lanes y conectores). Debe abrirse y revisarse personalmente en un editor BPMN antes de la entrega; un esquema de texto no reemplaza esa verificación.
 
