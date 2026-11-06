@@ -33,7 +33,7 @@ TechLogix Solutions es una empresa **ficticia** de soluciones informáticas. La 
 
 **Tablero GitHub Projects:** [TPI TechLogix - Backlog](https://github.com/users/dylancori/projects/1). La captura proporcionada por el autor muestra el ícono de globo (visibilidad pública), tres tarjetas HU #1–#3 vinculadas y estados Todo (3), In Progress (0), Done (0).
 
-**Pull Request:** [PR #4 — reescritura final](https://github.com/dylancori/TPI-Organizacion-Empresarial/pull/4), abierto como borrador y **sin revisión de pares**. La revisión por otra persona continúa pendiente.
+**Pull Request:** [PR #4 — reescritura final](https://github.com/dylancori/TPI-Organizacion-Empresarial/pull/4), abierto para revisión y **sin revisión de pares**. La revisión por otra persona continúa pendiente.
 
 ## Declaración de uso de IA
 Para la realización de esta entrega utilicé ChatGPT como herramienta de apoyo y orientación para organizar la información, revisar la redacción y mejorar la presentación de acuerdo con las consignas y la plantilla de la cátedra.
