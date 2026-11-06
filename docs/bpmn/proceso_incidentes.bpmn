@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_TechLogix" targetNamespace="https://techlogix.example/academico">
+  <bpmn:collaboration id="Collaboration_1">
+    <bpmn:participant id="Participant_Usuario" name="Usuario / Cliente" />
+    <bpmn:participant id="Participant_TechLogix" name="TechLogix Solutions" processRef="Process_Incidentes"/>
+    <bpmn:messageFlow id="MessageFlow_Reporte" sourceRef="Participant_Usuario" targetRef="StartEvent_1" />
+    <bpmn:messageFlow id="MessageFlow_Respuesta" sourceRef="Task_Notificar" targetRef="Participant_Usuario" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_Incidentes" name="Resolución de incidentes y mejora QA/CI-CD" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_1">
+      <bpmn:lane id="Lane_N1" name="Mesa de Ayuda (N1)"><bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef><bpmn:flowNodeRef>Task_Registrar</bpmn:flowNodeRef><bpmn:flowNodeRef>Gateway_N1</bpmn:flowNodeRef><bpmn:flowNodeRef>Task_ResolverN1</bpmn:flowNodeRef><bpmn:flowNodeRef>Task_Notificar</bpmn:flowNodeRef><bpmn:flowNodeRef>Gateway_Conforme</bpmn:flowNodeRef><bpmn:flowNodeRef>Task_Cerrar</bpmn:flowNodeRef><bpmn:flowNodeRef>EndEvent_1</bpmn:flowNodeRef></bpmn:lane>
+      <bpmn:lane id="Lane_N2" name="Soporte especializado (N2)"><bpmn:flowNodeRef>Task_Escalar</bpmn:flowNodeRef><bpmn:flowNodeRef>Task_Corregir</bpmn:flowNodeRef></bpmn:lane>
+      <bpmn:lane id="Lane_QA" name="Calidad y CI/CD"><bpmn:flowNodeRef>Task_Pruebas</bpmn:flowNodeRef><bpmn:flowNodeRef>Gateway_Pruebas</bpmn:flowNodeRef></bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="StartEvent_1" name="Incidente reportado"><bpmn:outgoing>Flow_1</bpmn:outgoing></bpmn:startEvent>
+    <bpmn:task id="Task_Registrar" name="Registrar y diagnosticar ticket"><bpmn:incoming>Flow_1</bpmn:incoming><bpmn:incoming>Flow_13</bpmn:incoming><bpmn:outgoing>Flow_2</bpmn:outgoing></bpmn:task>
+    <bpmn:exclusiveGateway id="Gateway_N1" name="¿Resuelve N1?"><bpmn:incoming>Flow_2</bpmn:incoming><bpmn:outgoing>Flow_3</bpmn:outgoing><bpmn:outgoing>Flow_4</bpmn:outgoing></bpmn:exclusiveGateway>
+    <bpmn:task id="Task_ResolverN1" name="Aplicar solución conocida"><bpmn:incoming>Flow_3</bpmn:incoming><bpmn:outgoing>Flow_5</bpmn:outgoing></bpmn:task>
+    <bpmn:task id="Task_Escalar" name="Escalar con diagnóstico a N2"><bpmn:incoming>Flow_4</bpmn:incoming><bpmn:outgoing>Flow_6</bpmn:outgoing></bpmn:task>
+    <bpmn:task id="Task_Corregir" name="Reproducir y corregir defecto"><bpmn:incoming>Flow_6</bpmn:incoming><bpmn:incoming>Flow_9</bpmn:incoming><bpmn:outgoing>Flow_7</bpmn:outgoing></bpmn:task>
+    <bpmn:task id="Task_Pruebas" name="Ejecutar QA y pipeline CI/CD"><bpmn:incoming>Flow_7</bpmn:incoming><bpmn:outgoing>Flow_8</bpmn:outgoing></bpmn:task>
+    <bpmn:exclusiveGateway id="Gateway_Pruebas" name="¿Pruebas OK?"><bpmn:incoming>Flow_8</bpmn:incoming><bpmn:outgoing>Flow_9</bpmn:outgoing><bpmn:outgoing>Flow_10</bpmn:outgoing></bpmn:exclusiveGateway>
+    <bpmn:task id="Task_Notificar" name="Notificar solución al usuario"><bpmn:incoming>Flow_5</bpmn:incoming><bpmn:incoming>Flow_10</bpmn:incoming><bpmn:outgoing>Flow_11</bpmn:outgoing></bpmn:task>
+    <bpmn:exclusiveGateway id="Gateway_Conforme" name="¿Usuario conforme?"><bpmn:incoming>Flow_11</bpmn:incoming><bpmn:outgoing>Flow_12</bpmn:outgoing><bpmn:outgoing>Flow_13</bpmn:outgoing></bpmn:exclusiveGateway>
+    <bpmn:task id="Task_Cerrar" name="Cerrar ticket y documentar aprendizaje"><bpmn:incoming>Flow_12</bpmn:incoming><bpmn:outgoing>Flow_14</bpmn:outgoing></bpmn:task>
+    <bpmn:endEvent id="EndEvent_1" name="Ticket cerrado"><bpmn:incoming>Flow_14</bpmn:incoming></bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="StartEvent_1" targetRef="Task_Registrar"/>
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Task_Registrar" targetRef="Gateway_N1"/>
+    <bpmn:sequenceFlow id="Flow_3" name="Sí" sourceRef="Gateway_N1" targetRef="Task_ResolverN1"/>
+    <bpmn:sequenceFlow id="Flow_4" name="No" sourceRef="Gateway_N1" targetRef="Task_Escalar"/>
+    <bpmn:sequenceFlow id="Flow_5" sourceRef="Task_ResolverN1" targetRef="Task_Notificar"/>
+    <bpmn:sequenceFlow id="Flow_6" sourceRef="Task_Escalar" targetRef="Task_Corregir"/>
+    <bpmn:sequenceFlow id="Flow_7" sourceRef="Task_Corregir" targetRef="Task_Pruebas"/>
+    <bpmn:sequenceFlow id="Flow_8" sourceRef="Task_Pruebas" targetRef="Gateway_Pruebas"/>
+    <bpmn:sequenceFlow id="Flow_9" name="No" sourceRef="Gateway_Pruebas" targetRef="Task_Corregir"/>
+    <bpmn:sequenceFlow id="Flow_10" name="Sí" sourceRef="Gateway_Pruebas" targetRef="Task_Notificar"/>
+    <bpmn:sequenceFlow id="Flow_11" sourceRef="Task_Notificar" targetRef="Gateway_Conforme"/>
+    <bpmn:sequenceFlow id="Flow_12" name="Sí" sourceRef="Gateway_Conforme" targetRef="Task_Cerrar"/>
+    <bpmn:sequenceFlow id="Flow_13" name="No, reabrir" sourceRef="Gateway_Conforme" targetRef="Task_Registrar"/>
+    <bpmn:sequenceFlow id="Flow_14" sourceRef="Task_Cerrar" targetRef="EndEvent_1"/>
+  </bpmn:process>
+<bpmndi:BPMNDiagram id="BPMNDiagram_TechLogix"><bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1">
+<bpmndi:BPMNShape id="DI_Participant_Usuario" bpmnElement="Participant_Usuario" isHorizontal="true"><dc:Bounds x="100" y="30" width="1980" height="90"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="DI_Participant_TechLogix" bpmnElement="Participant_TechLogix" isHorizontal="true"><dc:Bounds x="100" y="130" width="1980" height="510"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="DI_Lane_N1" bpmnElement="Lane_N1" isHorizontal="true"><dc:Bounds x="130" y="130" width="1950" height="170"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="DI_Lane_N2" bpmnElement="Lane_N2" isHorizontal="true"><dc:Bounds x="130" y="300" width="1950" height="170"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="DI_Lane_QA" bpmnElement="Lane_QA" isHorizontal="true"><dc:Bounds x="130" y="470" width="1950" height="170"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="DI_StartEvent_1" bpmnElement="StartEvent_1"><dc:Bounds x="210" y="195" width="36" height="36"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="DI_Task_Registrar" bpmnElement="Task_Registrar"><dc:Bounds x="310" y="175" width="125" height="76"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="DI_Gateway_N1" bpmnElement="Gateway_N1"><dc:Bounds x="495" y="188" width="50" height="50"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="DI_Task_ResolverN1" bpmnElement="Task_ResolverN1"><dc:Bounds x="625" y="175" width="125" height="76"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="DI_Task_Escalar" bpmnElement="Task_Escalar"><dc:Bounds x="625" y="340" width="125" height="76"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="DI_Task_Corregir" bpmnElement="Task_Corregir"><dc:Bounds x="840" y="340" width="135" height="76"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="DI_Task_Pruebas" bpmnElement="Task_Pruebas"><dc:Bounds x="1060" y="510" width="135" height="76"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="DI_Gateway_Pruebas" bpmnElement="Gateway_Pruebas"><dc:Bounds x="1290" y="522" width="50" height="50"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="DI_Task_Notificar" bpmnElement="Task_Notificar"><dc:Bounds x="1460" y="175" width="135" height="76"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="DI_Gateway_Conforme" bpmnElement="Gateway_Conforme"><dc:Bounds x="1670" y="188" width="50" height="50"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="DI_Task_Cerrar" bpmnElement="Task_Cerrar"><dc:Bounds x="1810" y="175" width="135" height="76"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="DI_EndEvent_1" bpmnElement="EndEvent_1"><dc:Bounds x="2010" y="195" width="36" height="36"/></bpmndi:BPMNShape>
+<bpmndi:BPMNEdge id="DI_Flow_1" bpmnElement="Flow_1"><di:waypoint x="246" y="213"/><di:waypoint x="310" y="213"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="DI_Flow_2" bpmnElement="Flow_2"><di:waypoint x="435" y="213"/><di:waypoint x="495" y="213"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="DI_Flow_3" bpmnElement="Flow_3"><di:waypoint x="545" y="213"/><di:waypoint x="625" y="213"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="DI_Flow_4" bpmnElement="Flow_4"><di:waypoint x="545" y="213"/><di:waypoint x="625" y="378"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="DI_Flow_5" bpmnElement="Flow_5"><di:waypoint x="750" y="213"/><di:waypoint x="1460" y="213"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="DI_Flow_6" bpmnElement="Flow_6"><di:waypoint x="750" y="378"/><di:waypoint x="840" y="378"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="DI_Flow_7" bpmnElement="Flow_7"><di:waypoint x="975" y="378"/><di:waypoint x="1060" y="548"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="DI_Flow_8" bpmnElement="Flow_8"><di:waypoint x="1195" y="548"/><di:waypoint x="1290" y="547"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="DI_Flow_9" bpmnElement="Flow_9"><di:waypoint x="1315" y="572"/><di:waypoint x="1315" y="610"/><di:waypoint x="908" y="610"/><di:waypoint x="908" y="416"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="DI_Flow_10" bpmnElement="Flow_10"><di:waypoint x="1340" y="547"/><di:waypoint x="1460" y="213"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="DI_Flow_11" bpmnElement="Flow_11"><di:waypoint x="1595" y="213"/><di:waypoint x="1670" y="213"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="DI_Flow_12" bpmnElement="Flow_12"><di:waypoint x="1720" y="213"/><di:waypoint x="1810" y="213"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="DI_Flow_13" bpmnElement="Flow_13"><di:waypoint x="1695" y="238"/><di:waypoint x="1695" y="275"/><di:waypoint x="370" y="275"/><di:waypoint x="370" y="175"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="DI_Flow_14" bpmnElement="Flow_14"><di:waypoint x="1945" y="213"/><di:waypoint x="2010" y="213"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="DI_MessageFlow_Reporte" bpmnElement="MessageFlow_Reporte"><di:waypoint x="230" y="120"/><di:waypoint x="210" y="213"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="DI_MessageFlow_Respuesta" bpmnElement="MessageFlow_Respuesta"><di:waypoint x="1595" y="213"/><di:waypoint x="1530" y="120"/></bpmndi:BPMNEdge>
+</bpmndi:BPMNPlane></bpmndi:BPMNDiagram>
+</bpmn:definitions>
