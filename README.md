@@ -36,9 +36,11 @@ TechLogix Solutions es una empresa **ficticia** de soluciones informáticas. La 
 **Pull Request:** [PR #4 — reescritura final](https://github.com/dylancori/TPI-Organizacion-Empresarial/pull/4), abierto como borrador y **sin revisión de pares**. La revisión por otra persona continúa pendiente.
 
 ## Declaración de uso de IA
-Se utilizó ChatGPT como herramienta de asistencia para revisar consignas y observaciones docentes, recuperar y comparar entregas previas, redactar borradores, proponer un flujo BPMN que integre incidentes con QA/CI-CD, estructurar historias de usuario y criterios de aceptación, preparar indicadores y operar GitHub con autorización. Se solicitaron aclaraciones para **no atribuir hechos inexistentes** a entregas anteriores y diferenciar propuestas de resultados medidos.
+Para la realización de esta entrega utilicé ChatGPT como herramienta de apoyo y orientación para organizar la información, revisar la redacción y mejorar la presentación de acuerdo con las consignas y la plantilla de la cátedra.
 
-**Evaluación crítica y correcciones:** el informe previo contenía afirmaciones sobre un PR y un tablero que no eran verificables, una correspondencia incorrecta de las entregas y referencias ambiguas al trabajo en equipo pese a ser individual. En esta reescritura se corrigieron esas referencias y se iniciaron registros reales de GitHub. El alumno todavía debe evaluar personalmente la precisión del BPMN, sus decisiones y el texto antes de firmar la entrega. La asistencia de IA no sustituye esa responsabilidad ni una revisión de pares auténtica.
+También recibí orientación sobre el funcionamiento de GitHub, el uso de ramas, commits, Issues, Pull Requests y el tablero de gestión. Algunas operaciones de documentación y configuración del repositorio se efectuaron mediante una conexión autorizada con mi cuenta. Utilicé asimismo asistencia para estructurar el borrador del proceso BPMN, formular criterios de aceptación e indicadores y comparar los contenidos con las entregas anteriores.
+
+Las consultas se enfocaron en ordenar los materiales, verificar la coherencia de las cuatro entregas y distinguir lo realizado de lo pendiente. La herramienta fue complementaria; corresponde a mi responsabilidad académica revisar y comprender el contenido, efectuar los ajustes personales y presentar información verificable. El PR #4 sigue sin revisión externa; no se afirma que esa exigencia esté cumplida.
 
 ## Estado del proyecto
 Proyecto académico **documental**. Que una historia esté definida no significa que esté programada o probada. Los resultados de los KPI son metas por validar, no cifras medidas.
