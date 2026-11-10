@@ -17,4 +17,4 @@ Los estados reflejan **desarrollo de funcionalidades**, no la redacción de docu
 4. Configurar el Project como **Public** y probar su URL en una ventana privada.
 5. Incorporar al PDF final una captura propia del tablero con URL visible.
 
-La conexión actual no puede inspeccionar los metadatos de GitHub Projects; por eso la comprobación de visibilidad y estados corresponde al autor.
+La vista pública se verificó mediante la captura aportada por el autor. El PR #4 cuenta además con aprobación externa de fededileo y fue fusionado en main.
